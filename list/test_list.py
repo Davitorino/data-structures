@@ -1,0 +1,66 @@
+import unittest
+from list import List
+
+
+class TestList(unittest.TestCase):
+    def test_insert_last(self):
+        lista = List()
+        lista.insert_last(1)
+        self.assertEquals(lista.get_last().value, 1)
+        self.assertEquals(lista.get_first().value, 1)
+        lista.insert_last(2)
+        self.assertEquals(lista.get_last().value, 2)
+        self.assertEquals(lista.get_first().value, 1)
+        lista.insert_last(3)
+        self.assertEquals(lista.get_last().value, 3)
+        self.assertEquals(lista.get_first().value, 1)
+
+    def test_insert_first(self):
+        lista = List()
+        lista.insert_first(1)
+        self.assertEquals(lista.get_last().value, 1)
+        self.assertEquals(lista.get_first().value, 1)
+        lista.insert_first(2)
+        self.assertEquals(lista.get_last().value, 1)
+        self.assertEquals(lista.get_first().value, 2)
+        lista.insert_first(3)
+        self.assertEquals(lista.get_last().value, 1)
+        self.assertEquals(lista.get_first().value, 3)
+
+    def test_remove_first(self):
+        lista = List()
+        lista.insert_last(1)
+        lista.insert_last(2)
+        lista.insert_last(3)
+        self.assertEquals(lista.get_first().value, 1)
+        self.assertEquals(lista.get_last().value, 3)
+        lista.remove_first()
+        self.assertEquals(lista.get_first().value, 2)
+        self.assertEquals(lista.get_last().value, 3)
+        lista.remove_first()
+        self.assertEquals(lista.get_first().value, 3)
+        self.assertEquals(lista.get_last().value, 3)
+        lista.remove_first()
+        self.assertEquals(lista.get_first(), None)
+        self.assertEquals(lista.get_last(), None)
+
+    def test_remove_from_pos(self):
+        lista = List()
+        lista.insert_last(1)
+        lista.insert_last(2)
+        lista.insert_last(3)
+        self.assertEquals(lista.get_first().value, 1)
+        self.assertEquals(lista.get_last().value, 3)
+        lista.remove_from_pos(1)
+        self.assertEquals(lista.get_first().value, 2)
+        self.assertEquals(lista.get_last().value, 3)
+        lista.insert_last(4)
+        lista.remove_from_pos(2)
+        self.assertEquals(lista.get_first().value, 2)
+        self.assertEquals(lista.get_last().value, 4)
+        lista.remove_from_pos(2)
+        self.assertEquals(lista.get_first().value, 2)
+        self.assertEquals(lista.get_last().value, 2)
+        lista.remove_from_pos(1)
+        self.assertEquals(lista.get_first(), None)
+        self.assertEquals(lista.get_last(), None)
