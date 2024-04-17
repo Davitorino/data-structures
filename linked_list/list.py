@@ -1,4 +1,4 @@
-from list_item import ListItem
+from linked_list.list_item import ListItem
 
 
 class List:

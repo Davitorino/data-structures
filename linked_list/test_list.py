@@ -1,5 +1,5 @@
 import unittest
-from list import List
+from linked_list.list import List
 
 
 class TestList(unittest.TestCase):
