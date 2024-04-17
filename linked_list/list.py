@@ -30,7 +30,7 @@ class List:
         actual = self.__first
         for _ in range(self.__count):
             if actual.value == value:
-                return actual
+                return actual.value
             actual = actual.next
         raise Exception('Value not found')
 
