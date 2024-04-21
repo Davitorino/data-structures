@@ -67,6 +67,7 @@ class List:
         self.__qtd += 1
 
     def inserir_na_posicao(self, k: int, valor):
+        self.__verificar_lista_cheia()
         self.__ir_para_primeiro()
         self.__avancar_k_posicoes(k - 1)
         self.inserir_antes_atual(valor)
