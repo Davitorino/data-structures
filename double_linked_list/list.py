@@ -43,6 +43,7 @@ class List:
         self.__qtd += 1
 
     def inserir_como_ultimo(self, valor):
+        self.__verificar_lista_cheia()
         item = ListItem(valor)
         if self.__ult is not None:
             self.__ult.next = item
@@ -54,6 +55,7 @@ class List:
         self.__qtd += 1
 
     def inserir_como_primeiro(self, valor):
+        self.__verificar_lista_cheia()
         item = ListItem(valor)
         if self.__prim is not None:
             self.__prim.prev = item
