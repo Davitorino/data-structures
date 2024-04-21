@@ -11,8 +11,8 @@ class List:
         self.__qtd = 0
         self.__limite = limite
 
-    def acessar_atual(self):
-        return self.__cursor.value
+    def acessar_atual(self) -> ListItem:
+        return self.__cursor
 
     def inserir_antes_atual(self, valor):
         self.__verificar_lista_vazia()
